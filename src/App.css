@@ -14,7 +14,8 @@ body {
 .home{
   /* --hero-image: url('https://www.active.com/packs/static/images/calculator/bodyfat-bmi-b1738474722ac623597c.webp'); */
   background-image: var(--hero-image,'');
-
+ background-repeat: no-repeat;
+ background-size: cover;
 }
 
 .fixed-element {

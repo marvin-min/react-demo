@@ -4,20 +4,18 @@ import _ from 'lodash';
 import './App.css';
 
 function App() {
-  const heroRef = useRef();
-  function viewportResize() {
-    const composerVH = window.visualViewport.height,
-        doc = document.documentElement;
-    console.log(window.visualViewport);
-    doc.style.setProperty("--composer-vh", `${composerVH}px`);
+  const [height, setHeight] = useState({ '--composer-vh': '100vh', "--hero-image": `url(${'https://images.squarespace-cdn.com/content/v1/6282ec55d5f3c229291fcb47/1674437725718-PQYL45LC1J5G7XX6ZAIM/image-asset.png'})` });
+  
+  const viewportResize = () => {
+    setHeight({...height, '--composer-vh': `${window.visualViewport.height}px`});
   }
   useEffect(()=>{
     window.visualViewport.addEventListener('resize', viewportResize);
-    heroRef.current.style.setProperty("--hero-image", `url(${'https://www.active.com/asset_pipeline/hero/a3-hero-c25k-ec8d82aaf12ad1dff2655f67baae58bf005e013246bc223c3120f507907c7d02.jpg'})`);
     return () => window.removeEventListener('resize', viewportResize);
-  },[]);
+  }, []);
+  //{}
   return (
-    <div className="home" ref={heroRef}>
+    <div className="home" style={height}>
       <div className="fixed-element">
         <div className="textarea">
             <textarea>Steps to reproduce:
@@ -30,7 +28,7 @@ function App() {
         <div className="button">
             <button>Submit</button>
         </div>
-    </div>
+      </div>
     </div>
   );
 }
