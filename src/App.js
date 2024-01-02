@@ -1,36 +1,36 @@
 
-import { useEffect, useRef, useState } from 'react';
-import _ from 'lodash';
+import { useCallback, useMemo, useState } from 'react';
 import './App.css';
+import Order from './components/Order';
+import Calculator from './components/Calculator';
 
 function App() {
-  const [height, setHeight] = useState({ '--composer-vh': '100vh', "--hero-image": `url(${'https://images.squarespace-cdn.com/content/v1/6282ec55d5f3c229291fcb47/1674437725718-PQYL45LC1J5G7XX6ZAIM/image-asset.png'})` });
+  const [count, setCount] = useState(0);
+  const [count1, setCount1] = useState(0);
+  const [count2, setCount2] = useState(0);
+  const [sum, setSum] = useState(0);
+  const [sum1, setSum1] = useState(0);
+  const [sum2, setSum2] = useState(0);
   
-  const viewportResize = () => {
-    setHeight({...height, '--composer-vh': `${window.visualViewport.height}px`});
-  }
-  useEffect(()=>{
-    window.visualViewport.addEventListener('resize', viewportResize);
-    return () => window.removeEventListener('resize', viewportResize);
-  }, []);
-  //{}
-  return (
-    <div className="home" style={height}>
-      <div className="fixed-element">
-        <div className="textarea">
-            <textarea>Steps to reproduce:
-                &#13;&#10;1. Open this page in Safari iOS 15
-                &#13;&#10;2. Tap the textarea (result: the floating address bar hides the submit button when the keyboard is visible)
-                &#13;&#10;3. Update Safari settings, set address bar to be at the top
-                &#13;&#10;4. Tap textarea again (result: submit button is visible, correctly)
-            </textarea>
-        </div>
-        <div className="button">
-            <button>Submit</button>
-        </div>
-      </div>
+  const memOrder = useMemo(() => <Order productId={count}></Order>, [count]);
+
+  
+  return <>
+    {memOrder}
+    <ul>
+      <li>count: {count}</li>
+      <li>count1: {count1}</li>
+      <li>count2: {count2}</li>
+      <li>sum: {sum}</li>
+      <li>sum1: {sum1}</li>
+      <li>sum2: {sum2}</li>
+    </ul>
+    <div>
+      <Calculator number={count} />
+      <Calculator number={count1} />
+      <Calculator number={count2} />
     </div>
-  );
+  </>
 }
 
 export default App;
