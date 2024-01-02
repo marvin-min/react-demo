@@ -1,48 +1,40 @@
-* {
+/* * {
   margin: 0;
   padding:0;
+} */
+
+.content-container {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px dashed red;
+  background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.bottom-bar {
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: red;
+  transform-origin: left bottom;
+  transform: translate(0px, 0px) scale(1);
 }
 
-
-html,
-body {
-    background-color: azure;
-    padding: 0;
-    margin: 0;
+.keyword-input {
+  height: 1.5rem;
+  margin: 1rem;
+  flex: 1;
+}
+button {
+  font-size: 1rem;
+  margin-right: 20px;
 }
 
-.home{
-  /* --hero-image: url('https://www.active.com/packs/static/images/calculator/bodyfat-bmi-b1738474722ac623597c.webp'); */
-  background-image: var(--hero-image,'');
- background-repeat: no-repeat;
- background-size: cover;
-}
-
-.fixed-element {
-    width: 100%;
-    height: calc(var(--composer-vh, 100vh) - env(safe-area-inset-bottom) - env(safe-area-inset-top));
-    box-sizing: border-box;
-    padding: 0;
-    border: 1px dashed red;
-    display: flex;
-    flex-direction: column;
-}
-
-.textarea {
-    flex-grow: 1;
-    box-sizing: border-box;
-    padding: 0.5em;
-}
-
-textarea {
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
-    font-size: 16px;
-    padding: 1em;
-}
-
-.button {
-    padding: 0.5em;
-    box-sizing: border-box;
+#layoutViewport {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
 }

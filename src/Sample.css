@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding:0;
+}
+
+
+html,
+body {
+    background-color: azure;
+    padding: 0;
+    margin: 0;
+}
+
+.home{
+  /* --hero-image: url('https://www.active.com/packs/static/images/calculator/bodyfat-bmi-b1738474722ac623597c.webp'); */
+  background-image: var(--hero-image,'');
+ background-repeat: no-repeat;
+ background-size: cover;
+}
+
+.fixed-element {
+    width: 100%;
+    /* height: calc(var(--composer-vh, 100vh) - env(safe-area-inset-bottom) - env(safe-area-inset-top)); */
+    height: 600px;
+    box-sizing: border-box;
+    padding: 0;
+    border: 1px dashed red;
+    display: flex;
+    flex-direction: column;
+}
+
+.textarea {
+    flex-grow: 1;
+    box-sizing: border-box;
+    padding: 0.5em;
+}
+
+textarea {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
+    padding: 1em;
+}
+
+.button {
+    padding: 0.5em;
+    box-sizing: border-box;
+}
