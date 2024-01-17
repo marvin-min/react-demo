@@ -1,0 +1,20 @@
+button {
+  margin: 1.25rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 1.25rem;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(200, 218, 234);
+}
+button:hover{
+  background-color: aquamarine;
+}
+.counter-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25rem;
+  
+  /* background-color: aliceblue; */
+}
