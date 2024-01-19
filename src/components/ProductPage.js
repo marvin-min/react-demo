@@ -11,6 +11,11 @@ export default function ProductPage({ productId, referrer, theme }) {
 
   return (
     <div className={theme}>
+      {/* 
+        because there is a dependency for onSubmit property, 
+        the ProductPage re-render will trigger ShippingFrom re-render,
+        but if the value onSubmit didn't changed, the ShippingForm will not rerender.
+       */}
       <ShippingForm onSubmit={handleSubmit} />
     </div>
   );
