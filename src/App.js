@@ -1,18 +1,11 @@
-import React,{useEffect} from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import { selectCount, increment } from './features/counter/counterSlice';
-
-import Counter from './features/counter/Counter';
+import React from 'react'
 import './App.css';
-
+import Pokemon from './components/Pokemon';
 
 const App = () => {
-  const count = useSelector(selectCount)
-  const dispatch= useDispatch();
   return (
     <div className='main'>
-      <h1 onClick={()=>{dispatch(increment())}}>total number {count}</h1>
-      <Counter />
+      <Pokemon/>
     </div>
   )
 }
